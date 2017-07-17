@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 #BEGIN_HEADER
-<<<<<<< HEAD
 import os
 import pandas as pd
 import numpy as np
@@ -11,8 +10,6 @@ import natsort
 import itertools
 import operator
 from itertools import islice
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 #END_HEADER
 
 
@@ -32,17 +29,12 @@ class ZS_MutualInfo:
     # the latter method is running.
     ######################################### noqa
     VERSION = "0.0.1"
-<<<<<<< HEAD
     GIT_URL = "https://github.com/zahmeeth/ZS_MutualInfo.git"
-=======
-    GIT_URL = ""
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
     GIT_COMMIT_HASH = ""
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
 
-<<<<<<< HEAD
     def _generate_mutual_info(self, compounds_file, fba_file):
 
         df1 = pd.read_csv(fba_file)
@@ -197,8 +189,6 @@ class ZS_MutualInfo:
 
             return MI_dict
 
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
     # config contains contents of config file in a hash or None if it couldn't
     # be found
     def __init__(self, config):
@@ -206,7 +196,6 @@ class ZS_MutualInfo:
         #END_CONSTRUCTOR
         pass
 
-<<<<<<< HEAD
     def run_flux_mutual_information_analysis(self, ctx, params):
         """
         :param params: instance of type
@@ -244,8 +233,7 @@ class ZS_MutualInfo:
                              'output is not type dict as required.')
         # return the results
         return [output]
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
+
     def status(self, ctx):
         #BEGIN_STATUS
         returnVal = {'state': "OK",

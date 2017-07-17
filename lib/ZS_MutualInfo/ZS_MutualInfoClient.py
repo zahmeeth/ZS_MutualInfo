@@ -33,7 +33,6 @@ class ZS_MutualInfo(object):
             trust_all_ssl_certificates=trust_all_ssl_certificates,
             auth_svc=auth_svc)
 
-<<<<<<< HEAD
     def run_flux_mutual_information_analysis(self, params, context=None):
         """
         :param params: instance of type
@@ -52,8 +51,6 @@ class ZS_MutualInfo(object):
             'ZS_MutualInfo.run_flux_mutual_information_analysis',
             [params], self._service_ver, context)
 
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
     def status(self, context=None):
         return self._client.call_method('ZS_MutualInfo.status',
                                         [], self._service_ver, context)

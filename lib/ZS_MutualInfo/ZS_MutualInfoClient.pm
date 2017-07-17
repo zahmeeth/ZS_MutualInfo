@@ -12,10 +12,7 @@ eval {
     $get_time = sub { Time::HiRes::gettimeofday() };
 };
 
-<<<<<<< HEAD
 use Bio::KBase::AuthToken;
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 
 # Client version should match Impl version
 # This is a Semantic Version number,
@@ -78,7 +75,6 @@ sub new
 	push(@{$self->{headers}}, 'Kbrpc-Errordest', $self->{kbrpc_error_dest});
     }
 
-<<<<<<< HEAD
     #
     # This module requires authentication.
     #
@@ -100,8 +96,6 @@ sub new
 	    $self->{client}->{token} = $self->{token};
 	}
     }
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 
     my $ua = $self->{client}->ua;	 
     my $timeout = $ENV{CDMI_TIMEOUT} || (30 * 60);	 
@@ -110,9 +104,6 @@ sub new
     #    $self->_validate_version();
     return $self;
 }
-
-
-<<<<<<< HEAD
 
 
 =head2 run_flux_mutual_information_analysis
@@ -216,9 +207,6 @@ ws_report_id is a string
 				       );
     }
 }
- 
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
   
 sub status
 {
@@ -254,11 +242,7 @@ sub status
 sub version {
     my ($self) = @_;
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-<<<<<<< HEAD
-        method => "ZS_MutualInfo.version",
-=======
         method => "${last_module.module_name}.version",
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
         params => [],
     });
     if ($result) {
@@ -266,26 +250,16 @@ sub version {
             Bio::KBase::Exceptions::JSONRPC->throw(
                 error => $result->error_message,
                 code => $result->content->{code},
-<<<<<<< HEAD
-                method_name => 'run_flux_mutual_information_analysis',
-=======
                 method_name => '${last_method.name}',
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
             );
         } else {
             return wantarray ? @{$result->result} : $result->result->[0];
         }
     } else {
         Bio::KBase::Exceptions::HTTP->throw(
-<<<<<<< HEAD
-            error => "Error invoking method run_flux_mutual_information_analysis",
-            status_line => $self->{client}->status_line,
-            method_name => 'run_flux_mutual_information_analysis',
-=======
             error => "Error invoking method ${last_method.name}",
             status_line => $self->{client}->status_line,
             method_name => '${last_method.name}',
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
         );
     }
 }
@@ -322,7 +296,6 @@ sub _validate_version {
 
 
 
-<<<<<<< HEAD
 =head2 compound_id
 
 =over 4
@@ -486,8 +459,6 @@ report_ref has a value which is a ZS_MutualInfo.ws_report_id
 
 
 
-=======
->>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 =cut
 
 package ZS_MutualInfo::ZS_MutualInfoClient::RpcClient;
