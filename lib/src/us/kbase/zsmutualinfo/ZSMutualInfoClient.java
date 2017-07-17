@@ -11,7 +11,10 @@ import us.kbase.auth.AuthToken;
 import us.kbase.common.service.JsonClientCaller;
 import us.kbase.common.service.JsonClientException;
 import us.kbase.common.service.RpcContext;
+<<<<<<< HEAD
 import us.kbase.common.service.UnauthorizedException;
+=======
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 
 /**
  * <p>Original spec-file module name: ZS_MutualInfo</p>
@@ -30,6 +33,7 @@ public class ZSMutualInfoClient {
     public ZSMutualInfoClient(URL url) {
         caller = new JsonClientCaller(url);
     }
+<<<<<<< HEAD
     /** Constructs a client with a custom URL.
      * @param url the URL of the service.
      * @param token the user's authorization token.
@@ -73,6 +77,8 @@ public class ZSMutualInfoClient {
     public AuthToken getToken() {
         return caller.getToken();
     }
+=======
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 
     /** Get the URL of the service with which this client communicates.
      * @return the service URL.
@@ -162,6 +168,7 @@ public class ZSMutualInfoClient {
         this.serviceVersion = newValue;
     }
 
+<<<<<<< HEAD
     /**
      * <p>Original spec-file function name: run_flux_mutual_information_analysis</p>
      * <pre>
@@ -179,6 +186,8 @@ public class ZSMutualInfoClient {
         return res.get(0);
     }
 
+=======
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
     public Map<String, Object> status(RpcContext... jsonRpcContext) throws IOException, JsonClientException {
         List<Object> args = new ArrayList<Object>();
         TypeReference<List<Map<String, Object>>> retType = new TypeReference<List<Map<String, Object>>>() {};

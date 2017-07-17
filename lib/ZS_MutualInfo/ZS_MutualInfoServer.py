@@ -16,7 +16,10 @@ from biokbase import log
 import requests as _requests
 import random as _random
 import os
+<<<<<<< HEAD
 from ZS_MutualInfo.authclient import KBaseAuth as _KBaseAuth
+=======
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 
 DEPLOY = 'KB_DEPLOYMENT_CONFIG'
 SERVICE = 'KB_SERVICE_NAME'
@@ -332,6 +335,7 @@ class Application(object):
             call_id=True, logfile=self.userlog.get_log_file())
         self.serverlog.set_log_level(6)
         self.rpc_service = JSONRPCServiceCustom()
+<<<<<<< HEAD
         self.method_authentication = dict()
         self.rpc_service.add(impl_ZS_MutualInfo.run_flux_mutual_information_analysis,
                              name='ZS_MutualInfo.run_flux_mutual_information_analysis',
@@ -342,6 +346,11 @@ class Application(object):
                              types=[dict])
         authurl = config.get(AUTH) if config else None
         self.auth_client = _KBaseAuth(authurl)
+=======
+        self.rpc_service.add(impl_ZS_MutualInfo.status,
+                             name='ZS_MutualInfo.status',
+                             types=[dict])
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
 
     def __call__(self, environ, start_response):
         # Context object, equivalent to the perl impl CallContext
@@ -382,6 +391,7 @@ class Application(object):
                                }
                 ctx['provenance'] = [prov_action]
                 try:
+<<<<<<< HEAD
                     token = environ.get('HTTP_AUTHORIZATION')
                     # parse out the method being requested and check if it
                     # has an authentication requirement
@@ -410,6 +420,8 @@ class Application(object):
                                     err.data = \
                                         "Token validation failed: %s" % e
                                     raise err
+=======
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
                     if (environ.get('HTTP_X_FORWARDED_FOR')):
                         self.log(log.INFO, ctx, 'X-Forwarded-For: ' +
                                  environ.get('HTTP_X_FORWARDED_FOR'))
@@ -554,11 +566,14 @@ def process_async_cli(input_file_path, output_file_path, token):
     if 'id' not in req:
         req['id'] = str(_random.random())[2:]
     ctx = MethodContext(application.userlog)
+<<<<<<< HEAD
     if token:
         user = application.auth_client.get_user(token)
         ctx['user_id'] = user
         ctx['authenticated'] = 1
         ctx['token'] = token
+=======
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
     if 'context' in req:
         ctx['rpc_context'] = req['context']
     ctx['CLI'] = 1

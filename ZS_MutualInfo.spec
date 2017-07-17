@@ -13,16 +13,30 @@ module ZS_MutualInfo {
     */
     typedef string ws_fbamodel_id;
     /* 
+<<<<<<< HEAD
+=======
+        The workspace ID for a Media data object.
+        @id ws KBaseBiochem.Media
+    */
+    typedef string ws_media_id;
+    /* 
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
         The workspace ID for a Report object
         @id ws KBaseReport.Report
     */
 	typedef string ws_report_id;
     
     typedef structure {
+<<<<<<< HEAD
         ws_fbamodel_id fbamodel_id;
         list<compound_id> compounds;
         string workspace;
         string media_id;
+=======
+	ws_media_id media_id;
+        ws_fbamodel_id fbamodel_id;
+        list<compound_id> compounds;
+>>>>>>> 926dddc52326374882c0ae646eed77f45218d0f7
     } RunFluxMutualInformationAnalysisParams;
     
     typedef structure {
