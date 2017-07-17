@@ -30,7 +30,6 @@ public class ZSMutualInfoClient {
     public ZSMutualInfoClient(URL url) {
         caller = new JsonClientCaller(url);
     }
-
     /** Constructs a client with a custom URL.
      * @param url the URL of the service.
      * @param token the user's authorization token.

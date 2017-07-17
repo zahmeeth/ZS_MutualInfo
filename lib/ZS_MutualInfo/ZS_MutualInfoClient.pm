@@ -106,6 +106,8 @@ sub new
 }
 
 
+
+
 =head2 run_flux_mutual_information_analysis
 
   $output = $obj->run_flux_mutual_information_analysis($params)
@@ -207,6 +209,7 @@ ws_report_id is a string
 				       );
     }
 }
+ 
   
 sub status
 {
@@ -242,7 +245,7 @@ sub status
 sub version {
     my ($self) = @_;
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-        method => "${last_module.module_name}.version",
+        method => "ZS_MutualInfo.version",
         params => [],
     });
     if ($result) {
@@ -250,16 +253,16 @@ sub version {
             Bio::KBase::Exceptions::JSONRPC->throw(
                 error => $result->error_message,
                 code => $result->content->{code},
-                method_name => '${last_method.name}',
+                method_name => 'run_flux_mutual_information_analysis',
             );
         } else {
             return wantarray ? @{$result->result} : $result->result->[0];
         }
     } else {
         Bio::KBase::Exceptions::HTTP->throw(
-            error => "Error invoking method ${last_method.name}",
+            error => "Error invoking method run_flux_mutual_information_analysis",
             status_line => $self->{client}->status_line,
-            method_name => '${last_method.name}',
+            method_name => 'run_flux_mutual_information_analysis',
         );
     }
 }
@@ -337,6 +340,38 @@ a string
 
 The workspace ID for a FBAModel data object.
 @id ws KBaseFBA.FBAModel
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a string
+</pre>
+
+=end html
+
+=begin text
+
+a string
+
+=end text
+
+=back
+
+
+
+=head2 ws_media_id
+
+=over 4
+
+
+
+=item Description
+
+The workspace ID for a Media data object.
+@id ws KBaseBiochem.Media
 
 
 =item Definition

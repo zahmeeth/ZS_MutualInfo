@@ -410,7 +410,6 @@ class Application(object):
                                     err.data = \
                                         "Token validation failed: %s" % e
                                     raise err
-
                     if (environ.get('HTTP_X_FORWARDED_FOR')):
                         self.log(log.INFO, ctx, 'X-Forwarded-For: ' +
                                  environ.get('HTTP_X_FORWARDED_FOR'))
