@@ -223,7 +223,6 @@ class ZS_MutualInfo:
 
         compounds_file = self._generate_compounds_file(comounds)
         fba_file = self._generate_fba_file(fba_object_ref)
-
         mutual_info = self._generate_mutual_info(compounds_file, fba_file)
 
         #END run_flux_mutual_information_analysis
